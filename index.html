@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7fa">
+  <title>Love Calculator by Name: Free Love Test | LoveCalcu</title>
+  <meta name="description" content="Free love calculator by name. Enter two names, get an instant love percentage and four love bars, then share the result with your crush or partner.">
+  <meta name="author" content="Dilawar Khan">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://lovecalcu.com/">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LoveCalcu">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Love Calculator by Name: Free Love Test">
+  <meta property="og:description" content="Enter two names and see your love percentage instantly.">
+  <meta property="og:url" content="https://lovecalcu.com/">
+  <meta property="og:image" content="https://lovecalcu.com/lovecalcu.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Love Calculator by Name: Free Love Test">
+  <meta name="twitter:description" content="Enter two names and see your love percentage instantly.">
+  <meta name="twitter:image" content="https://lovecalcu.com/lovecalcu.jpeg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+  {"@type":"WebApplication","name":"LoveCalcu Love Calculator","url":"https://lovecalcu.com/","description":"A free name-based love calculator that gives a playful compatibility percentage for entertainment.","applicationCategory":"EntertainmentApplication","operatingSystem":"Any","inLanguage":"en","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Dilawar Khan"}},
+  {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is the love calculator accurate?","acceptedAnswer":{"@type":"Answer","text":"No. It is made for fun and cannot measure real feelings or compatibility."}},
+  {"@type":"Question","name":"Can I calculate love compatibility by name?","acceptedAnswer":{"@type":"Answer","text":"Yes. Enter two names to get a playful love percentage. No birth date is needed."}},
+  {"@type":"Question","name":"Why is my result always the same?","acceptedAnswer":{"@type":"Answer","text":"The score depends only on the two names, in any order, so the same pair always gets the same percentage."}},
+  {"@type":"Question","name":"What is a good love percentage?","acceptedAnswer":{"@type":"Answer","text":"Above 70% is a strong match here, and 50% to 69% is a promising one. It is still just for fun."}},
+  {"@type":"Question","name":"Does a low score mean we are not a good match?","acceptedAnswer":{"@type":"Answer","text":"No. The score cannot say whether a relationship is healthy or right."}},
+  {"@type":"Question","name":"Are the names I enter saved?","acceptedAnswer":{"@type":"Answer","text":"Names stay in your browser and are not sent to our servers for calculation."}},
+  {"@type":"Question","name":"Can I share my love calculator result?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share on WhatsApp, copy the result link, or save the result as an image."}}]}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5580564546196829" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D30DNJM2LB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-D30DNJM2LB');</script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/" aria-label="LoveCalcu home"><span aria-hidden="true">♡</span> LoveCalcu</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#calculator">Love calculator</a><a href="#how-it-works">How it works</a><a href="#faq">FAQs</a><a href="about.html">About</a>
+    </nav>
+  </div></header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true">♥</span> A little fun for two</p>
+        <h1 id="page-title">Love Calculator by Name</h1>
+        <p class="hero-description">Enter two names and get a lighthearted love percentage in seconds, with four love bars to talk about. Free, no sign-up, and ready to share.</p>
+        <a class="text-link" href="#how-it-works">How does the love test work? <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <section class="calculator-card" id="calculator" aria-labelledby="calculator-title">
+        <div class="card-heading">
+          <span class="heart-mark" aria-hidden="true">♥</span>
+          <div><h2 id="calculator-title">Check your love match</h2><p>Enter your names to calculate a playful score.</p></div>
+        </div>
+        <form id="love-form">
+          <div class="field"><label for="name1">Your name</label>
+            <input id="name1" name="name1" type="text" autocomplete="given-name" maxlength="30" placeholder="e.g. Alex" required></div>
+          <div class="field"><label for="name2">Your crush or partner's name</label>
+            <input id="name2" name="name2" type="text" autocomplete="off" maxlength="30" placeholder="e.g. Sam" required></div>
+          <button class="button button-primary" id="calculate" type="submit">Calculate compatibility <span aria-hidden="true">♥</span></button>
+          <div class="pairs"><span>Try a famous pair:</span>
+            <button type="button" data-a="Heer" data-b="Ranjha">Heer + Ranjha</button>
+            <button type="button" data-a="Laila" data-b="Majnun">Laila + Majnun</button>
+            <button type="button" data-a="Romeo" data-b="Juliet">Romeo + Juliet</button>
+            <button type="button" data-a="Shirin" data-b="Farhad">Shirin + Farhad</button></div>
+          <div class="pairs" id="recent" hidden></div>
+          <p class="privacy-note">Names are used in your browser to create the result. This is for entertainment, not relationship advice.</p>
+        </form>
+        <div id="calculating" class="calculation-state" role="status" aria-live="polite" hidden>
+          <span class="spinner" aria-hidden="true"></span><p id="div-msg">Comparing your names…</p>
+        </div>
+        <section id="results" class="result-state" aria-labelledby="result-title" aria-live="polite" hidden>
+          <p class="result-kicker">Your playful match</p>
+          <svg class="heart-meter" viewBox="0 0 200 180" role="img" aria-label="Love meter">
+            <defs><path id="hp" d="M100 170C40 125 10 92 10 55 10 30 30 12 54 12c18 0 35 10 46 28C111 22 128 12 146 12c24 0 44 18 44 43 0 37-30 70-90 115z"/><clipPath id="hc"><use href="#hp"/></clipPath></defs>
+            <use href="#hp" class="heart-bg"/>
+            <g clip-path="url(#hc)"><rect id="fill" class="heart-fill" width="200" height="180"/></g>
+            <text id="pct" x="100" y="108" text-anchor="middle">0%</text>
+          </svg>
+          <h2 id="result-title" tabindex="-1">Your result is ready!</h2>
+          <p id="love-results" class="result-copy"></p>
+          <div class="bars" id="bars"></div>
+          <p class="result-disclaimer">This percentage comes from the two names only. It isn't a measure of real compatibility. Trust, communication, respect, and how you feel together matter far more.</p>
+          <div class="actions">
+            <a class="button button-primary" id="shareWa" target="_blank" rel="noopener">Share on WhatsApp</a>
+            <button class="button button-secondary" id="saveImg" type="button">Save as image</button>
+            <button class="button button-secondary" id="copyLink" type="button">Copy result link</button>
+            <button class="button button-secondary" id="try-again" type="button">Try another pair</button>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <section class="share-section" aria-label="Share LoveCalcu">
+      <p>Enjoyed the love test?</p>
+      <button class="button button-share" id="share-button" type="button">
+        <svg class="share-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M15 8 9 11.5m6 4L9 12.5M19 6a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm9 6a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Share LoveCalcu</span></button>
+      <button class="button button-share" id="install-button" type="button" hidden>Install app</button>
+      <span id="share-status" class="share-feedback" role="status" aria-live="polite"></span>
+    </section>
+
+    <div class="content-layout">
+      <article class="guide">
+        <p class="byline">By Dilawar Khan. Updated October 2026.</p>
+        <nav class="toc" aria-label="On this page"><a href="#how-it-works">How it works</a><a href="#score-meaning">Score meaning</a><a href="#stories">Famous pairs</a><a href="#improve">Build compatibility</a><a href="#faq">FAQ</a></nav>
+
+        <section id="how-it-works" class="content-section">
+          <p class="eyebrow">The quick guide</p>
+          <h2>How does this love calculator work?</h2>
+          <p>LoveCalcu is a name-based love calculator. It turns the letters of both names into a number between 30% and 100%. Capital letters, spaces, and the order of the names don't matter, so the same pair always gets the same score.</p>
+          <p>It doesn't ask for birthdays or zodiac signs. The result is created in your browser and is meant for fun, not as a scientific test or a prediction.</p>
+        </section>
+
+        <section class="content-section" id="how-to-use">
+          <h2>How to use the love compatibility calculator</h2>
+          <ol class="steps">
+            <li><span>1</span><div><strong>Enter two names</strong><p>Use your name and the name of a crush, partner, friend, or fictional couple.</p></div></li>
+            <li><span>2</span><div><strong>Calculate the score</strong><p>Select “Calculate compatibility” and watch the heart fill.</p></div></li>
+            <li><span>3</span><div><strong>Share the fun</strong><p>Send it on WhatsApp, copy the link, or save the result as an image.</p></div></li>
+          </ol>
+        </section>
+
+        <section class="content-section score-section" id="score-meaning">
+          <h2>What does a love percentage mean?</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Score</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>90% to 100%</td><td>A rare match with easy understanding.</td></tr>
+              <tr><td>70% to 89%</td><td>A great match with lots of shared energy.</td></tr>
+              <tr><td>50% to 69%</td><td>A promising match that grows with honest talks.</td></tr>
+              <tr><td>30% to 49%</td><td>Different styles. Patience and humor help.</td></tr>
+            </tbody></table></div>
+          <p>Under your percentage you will also see four bars: trust, chemistry, friendship, and communication. They are built from the same names, so use them as conversation prompts. If friendship is high, plan something you both enjoy. If communication is lower, ask each other one new question this week.</p>
+        </section>
+
+        <section class="content-section" id="stories">
+          <h2>Test the famous love stories</h2>
+          <p>Use the quick buttons above to check <strong>Heer and Ranjha</strong>, the Punjabi folk romance told by Waris Shah. Try <strong>Laila and Majnun</strong>, the classic tale of a poet lost in love, <strong>Shirin and Farhad</strong> from Persian poetry, and <strong>Romeo and Juliet</strong> by Shakespeare. Then compare their scores with yours and share the winner in your group chat.</p>
+        </section>
+
+        <section class="content-section" id="improve">
+          <h2>6 ways to build real compatibility</h2>
+          <ul class="tips">
+            <li><strong>Listen first.</strong> Repeat back what you heard before you answer.</li>
+            <li><strong>Share small moments.</strong> A daily message builds more closeness than rare big gestures.</li>
+            <li><strong>Agree on values early.</strong> Family, money, and future plans matter most.</li>
+            <li><strong>Argue kindly.</strong> Talk about the problem, not the person.</li>
+            <li><strong>Keep your own life.</strong> Friends and hobbies make you a better partner.</li>
+            <li><strong>Be honest, softly.</strong> Trust grows when truth comes with care.</li>
+          </ul>
+        </section>
+
+        <section class="content-section faq-section" id="faq">
+          <p class="eyebrow">Good to know</p>
+          <h2>Love calculator FAQs</h2>
+          <details><summary>Is the love calculator accurate?</summary><p>No. It is made for fun and cannot measure real feelings or compatibility.</p></details>
+          <details><summary>Can I calculate love compatibility by name?</summary><p>Yes. Enter two names to get a playful love percentage. No birth date is needed.</p></details>
+          <details><summary>Why is my result always the same?</summary><p>The score depends only on the two names, in any order, so the same pair always gets the same percentage.</p></details>
+          <details><summary>What is a good love percentage?</summary><p>Above 70% is a strong match here, and 50% to 69% is a promising one. It is still just for fun.</p></details>
+          <details><summary>Does a low score mean we are not a good match?</summary><p>No. The score cannot say whether a relationship is healthy or right.</p></details>
+          <details><summary>Are the names I enter saved?</summary><p>Names stay in your browser and are not sent to our servers for calculation. See our <a href="privacy.html">Privacy Policy</a> for details about the site and its third-party services.</p></details>
+          <details><summary>Can I share my love calculator result?</summary><p>Yes. Share on WhatsApp, copy the result link, or save the result as an image.</p></details>
+        </section>
+
+        <aside class="note-card"><span class="note-icon" aria-hidden="true">♡</span>
+          <div><h2>Love is more than a number</h2><p>A calculator can start a smile or a conversation. What matters most is how you treat one another.</p></div></aside>
+      </article>
+
+      <aside class="guide-aside" aria-label="About LoveCalcu">
+        <div class="aside-card"><span class="aside-heart" aria-hidden="true">♥</span>
+          <h2>A simple, free love test</h2><p>No account or sign-up needed. Works on any phone or computer.</p>
+          <a href="#calculator">Calculate your score <span aria-hidden="true">→</span></a></div>
+        <div class="aside-card related"><h2>More love tools</h2>
+          <a href="/name-love-calculator.html">Name love calculator</a><a href="/zodiac-love-calculator.html">Zodiac compatibility</a>
+          <a href="/flames-calculator.html">FLAMES calculator</a><a href="/crush-calculator.html">Crush calculator</a></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner">
+    <a class="brand footer-brand" href="/"><span aria-hidden="true">♡</span> LoveCalcu</a>
+    <p>A little fun, with love.</p>
+    <nav aria-label="Footer navigation"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="tos.html">Terms</a></nav>
+    <small>© <span id="current-year">2026</span> LoveCalcu. For entertainment only.</small>
+  </div></footer>
+</body>
+</html>
