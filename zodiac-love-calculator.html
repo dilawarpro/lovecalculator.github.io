@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7fa">
+  <title>Zodiac Love Calculator: Star Sign Compatibility | LoveCalcu</title>
+  <meta name="description" content="Free zodiac love calculator. Pick two star signs to see your love compatibility percentage and what the fire, earth, air, and water elements mean for you.">
+  <meta name="author" content="Dilawar Khan">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://lovecalcu.com/zodiac-love-calculator.html">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LoveCalcu">
+  <meta property="og:title" content="Zodiac Love Calculator: Star Sign Compatibility">
+  <meta property="og:description" content="Pick two star signs and see your zodiac love match.">
+  <meta property="og:url" content="https://lovecalcu.com/zodiac-love-calculator.html">
+  <meta property="og:image" content="https://lovecalcu.com/lovecalcu.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+  {"@type":"WebApplication","name":"LoveCalcu Zodiac Love Calculator","url":"https://lovecalcu.com/zodiac-love-calculator.html","applicationCategory":"EntertainmentApplication","operatingSystem":"Any","inLanguage":"en","dateModified":"2026-10-08","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Dilawar Khan"}},
+  {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How does the zodiac love calculator work?","acceptedAnswer":{"@type":"Answer","text":"It compares the elements of your two signs (fire, earth, air, water) and adds a small sign-based variation to give a playful percentage."}},
+  {"@type":"Question","name":"Which zodiac signs are the best match?","acceptedAnswer":{"@type":"Answer","text":"In traditional astrology, fire pairs well with air, and earth pairs well with water. Signs that share an element also get along well."}},
+  {"@type":"Question","name":"Is zodiac compatibility scientific?","acceptedAnswer":{"@type":"Answer","text":"No. Astrology is not supported by scientific evidence. Use this calculator for fun and conversation."}},
+  {"@type":"Question","name":"Does a low score mean we should not date?","acceptedAnswer":{"@type":"Answer","text":"No. Real relationships depend on trust, respect, and communication, not on star signs."}}]}]}
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5580564546196829" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D30DNJM2LB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-D30DNJM2LB');</script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js" defer></script>
+  <script src="zodiac.js" defer></script>
+  <style>
+    :root{color-scheme:light;--ink:#30232c;--muted:#746771;--pink:#e94c83;--pink-dark:#c9356b;--pink-pale:#fff0f5;--line:#f0dfe7;--paper:#fff;--page:#fff9fb;--shadow:0 20px 55px rgba(99,39,67,.1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--pink-dark);text-underline-offset:.2em}
+a:hover{color:#a92859}
+button,input{font:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid #733d9a;outline-offset:3px}
+h1,h2,p{margin-top:0}
+.skip-link{position:absolute;z-index:10;top:.75rem;left:.75rem;padding:.65rem 1rem;transform:translateY(-160%);border-radius:.5rem;background:var(--ink);color:#fff}
+.skip-link:focus{transform:translateY(0);color:#fff}
+
+/* Header and footer */
+.site-header{position:relative;z-index:2;background:rgba(255,255,255,.9);border-bottom:1px solid rgba(240,223,231,.8)}
+.header-inner,.footer-inner{width:min(1120px,calc(100% - 2.5rem));margin:0 auto}
+.header-inner{display:flex;min-height:76px;align-items:center;justify-content:space-between;gap:1.5rem}
+.brand{flex:0 0 auto;color:var(--ink);font-size:1.25rem;font-weight:800;letter-spacing:-.04em;text-decoration:none}
+.brand span{color:var(--pink);font-size:1.45em;vertical-align:-.07em}
+.site-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.4rem 1.5rem}
+.site-nav a,.site-footer nav a{color:var(--muted);font-size:.9rem;font-weight:600;text-decoration:none}
+.site-nav a:hover,.site-footer nav a:hover{color:var(--pink-dark)}
+.site-footer{padding:2.6rem 0 2rem;border-top:1px solid var(--line);background:#fff}
+.footer-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
+.footer-brand{font-size:1.1rem}
+.footer-inner>p{margin:.2rem 0 1rem;color:var(--muted);font-size:.84rem}
+.site-footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.3rem;margin-bottom:1.2rem}
+.site-footer nav a{font-size:.82rem}
+.site-footer small{color:var(--muted);font-size:.77rem}
+
+/* Hero */
+main{overflow:hidden}
+.hero{position:relative;display:grid;width:min(1120px,calc(100% - 2.5rem));min-height:530px;grid-template-columns:minmax(0,.95fr) minmax(360px,.8fr);align-items:center;gap:clamp(2rem,7vw,6.5rem);margin:0 auto;padding:5rem 0 4.5rem}
+.hero::before{position:absolute;z-index:-1;top:-180px;left:-260px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,230,.65),rgba(255,249,251,0) 68%);content:""}
+.hero-copy{animation:rise-in 650ms ease both}
+.eyebrow{margin:0 0 .8rem;color:var(--pink-dark);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.hero-copy .eyebrow span{margin-right:.25rem}
+h1{max-width:610px;margin-bottom:1.15rem;font-size:clamp(2.55rem,5vw,4.25rem);font-weight:800;letter-spacing:-.065em;line-height:1.04}
+.hero-description{max-width:520px;margin-bottom:1.5rem;color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.75}
+.text-link{display:inline-flex;align-items:center;gap:.55rem;font-size:.94rem;font-weight:700;text-decoration:none}
+
+/* Calculator card */
+.calculator-card{padding:clamp(1.5rem,4vw,2.25rem);border:1px solid rgba(240,223,231,.9);border-radius:1.5rem;background:var(--paper);box-shadow:var(--shadow);animation:rise-in 700ms 100ms ease both}
+.card-heading{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
+.heart-mark{display:grid;width:50px;height:50px;flex:0 0 50px;place-items:center;border-radius:16px;background:var(--pink-pale);color:var(--pink);font-size:1.55rem;animation:heart-beat 2.6s ease-in-out infinite}
+.card-heading h2{margin:0 0 .2rem;font-size:1.18rem;letter-spacing:-.025em}
+.card-heading p{margin:0;color:var(--muted);font-size:.87rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;margin-bottom:.4rem;font-size:.86rem;font-weight:700}
+.field input{display:block;width:100%;min-height:49px;padding:.65rem .8rem;border:1px solid var(--line);border-radius:.65rem;background:#fffdfd;color:var(--ink);transition:border-color 160ms ease,box-shadow 160ms ease}
+.field input::placeholder{color:#a598a0}
+.field input:focus{border-color:var(--pink);outline:0;box-shadow:0 0 0 4px rgba(233,76,131,.12)}
+.button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;gap:.6rem;padding:.7rem 1.1rem;border:0;border-radius:.7rem;font-size:.93rem;font-weight:750;text-decoration:none;transition:transform 160ms ease,background-color 160ms ease,box-shadow 160ms ease}
+.button:hover{box-shadow:0 8px 20px rgba(99,39,67,.12)}
+.button-primary{width:100%;margin-top:.25rem;background:linear-gradient(110deg,#ec5d91,#d9447b);box-shadow:0 8px 18px rgba(217,68,123,.2);color:#fff}
+.button-primary:hover{background:linear-gradient(110deg,#e75289,#c9356b);color:#fff;box-shadow:0 10px 22px rgba(217,68,123,.27)}
+.button-secondary{background:var(--pink-pale);color:var(--pink-dark)}
+.button-secondary:hover{background:#ffe2ec;color:#a92859}
+.privacy-note{margin:.9rem 0 0;color:var(--muted);font-size:.75rem;line-height:1.55;text-align:center}
+.calculation-state,.result-state{padding-top:.4rem;text-align:center}
+.calculation-state[hidden],.result-state[hidden],.share-section [hidden]{display:none}
+.spinner{display:block;width:44px;height:44px;margin:0 auto 1rem;border:4px solid var(--pink-pale);border-top-color:var(--pink);border-radius:50%;animation:spin 850ms linear infinite}
+.calculation-state p{margin:0;color:var(--muted)}
+.result-state{animation:rise-in 380ms ease both}
+.result-kicker{margin-bottom:.25rem;color:var(--pink-dark);font-size:.77rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.result-state h2{margin-bottom:.75rem;font-size:1.45rem}
+.result-copy{margin-bottom:1rem;font-size:1.05rem}
+.result-copy strong{display:inline-block;color:var(--pink-dark);font-size:1.6rem;letter-spacing:-.05em}
+.result-disclaimer{margin-bottom:1.25rem;color:var(--muted);font-size:.82rem}
+
+/* Share strip */
+.share-section{display:flex;min-height:76px;align-items:center;justify-content:center;gap:.85rem;padding:.7rem 1.25rem;border-top:1px solid rgba(240,223,231,.7);border-bottom:1px solid rgba(240,223,231,.7);background:rgba(255,255,255,.68)}
+.share-section p{margin:0;color:var(--muted);font-size:.9rem;font-weight:650}
+.button-share{min-height:38px;padding:.45rem .8rem;background:transparent;color:var(--pink-dark);font-size:.85rem;text-decoration:underline;text-underline-offset:.2em}
+.share-icon{width:1.05rem;height:1.05rem;flex:0 0 auto}
+.share-feedback{flex-basis:100%;color:var(--muted);font-size:.8rem;text-align:center}
+.share-feedback:empty{display:none}
+
+/* Article */
+.content-layout{display:grid;width:min(1040px,calc(100% - 2.5rem));grid-template-columns:minmax(0,1fr) 255px;align-items:start;gap:clamp(2rem,6vw,5rem);margin:0 auto;padding:5.5rem 0 6rem}
+.guide{min-width:0}
+.content-section{margin-bottom:3.5rem}
+.content-section h2,.note-card h2{margin-bottom:.9rem;font-size:clamp(1.45rem,2.5vw,1.9rem);letter-spacing:-.045em;line-height:1.25}
+.content-section p,.note-card p{margin-bottom:.9rem;color:#594b54}
+.steps{display:grid;gap:1.25rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.steps li{display:flex;align-items:flex-start;gap:.9rem}
+.steps li>span{display:grid;width:32px;height:32px;flex:0 0 32px;place-items:center;border-radius:50%;background:var(--pink-pale);color:var(--pink-dark);font-size:.85rem;font-weight:800}
+.steps strong{display:block;margin-bottom:.15rem}
+.steps p{margin:0;color:var(--muted);font-size:.93rem}
+.faq-section details{padding:1rem 0;border-bottom:1px solid var(--line)}
+.faq-section details:first-of-type{border-top:1px solid var(--line)}
+.faq-section summary{position:relative;padding-right:1.7rem;font-weight:700;cursor:pointer;list-style:none}
+.faq-section summary::-webkit-details-marker{display:none}
+.faq-section summary::after{position:absolute;right:0;color:var(--pink-dark);content:"+";font-size:1.25rem;line-height:1.2}
+.faq-section details[open] summary::after{content:"−"}
+.faq-section details p{margin:.75rem 0 0;color:var(--muted);font-size:.94rem}
+.note-card{display:flex;align-items:flex-start;gap:1rem;padding:1.4rem;border:1px solid #f4dce6;border-radius:1rem;background:linear-gradient(135deg,#fff1f6,#fff9fb)}
+.note-icon{color:var(--pink);font-size:1.8rem;line-height:1}
+.note-card h2{margin-bottom:.45rem;font-size:1.1rem}
+.note-card p{margin:0;font-size:.91rem}
+.guide-aside{position:sticky;top:1.5rem;display:grid;gap:1rem;padding-top:.4rem}
+.aside-card{padding:1.3rem;border:1px solid var(--line);border-radius:1rem;background:var(--paper);box-shadow:0 12px 32px rgba(99,39,67,.06)}
+.aside-card h2{margin:.35rem 0 .55rem;font-size:1.07rem;letter-spacing:-.025em;line-height:1.35}
+.aside-card p{margin-bottom:.8rem;color:var(--muted);font-size:.88rem}
+.aside-card a{font-size:.86rem;font-weight:750;text-decoration:none}
+.aside-heart{color:var(--pink);font-size:1.35rem}
+
+/* Engagement features */
+.byline{margin:0 0 .8rem;color:var(--muted);font-size:.88rem}
+.toc{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.toc a{padding:.35rem .85rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font-size:.85rem;font-weight:600;text-decoration:none}
+.toc a:hover{background:var(--pink-pale);color:var(--pink-dark)}
+.pairs{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;margin-top:1rem;font-size:.8rem}
+.pairs[hidden]{display:none}
+.pairs span{color:var(--muted);font-weight:700}
+.pairs button{padding:.3rem .7rem;border:1px solid var(--line);border-radius:999px;background:var(--pink-pale);color:var(--pink-dark);font-size:.8rem;font-weight:600;transition:background .2s,color .2s}
+.pairs button:hover{background:var(--pink);border-color:var(--pink);color:#fff}
+.chip{display:inline-flex}
+.chip button:first-child{border-right:0;border-radius:999px 0 0 999px}
+.pairs .chip-x{padding:.3rem .6rem;border-radius:0 999px 999px 0;font-size:.95rem;line-height:1}
+.pairs .clear-recent{padding:.3rem .4rem;border:0;background:none;color:var(--muted);text-decoration:underline}
+.pairs .clear-recent:hover{background:none;color:var(--pink-dark)}
+.heart-meter{display:block;width:min(210px,62%);margin:.4rem auto .6rem}
+.heart-bg{fill:#fbe6ee}
+.heart-fill{fill:var(--pink);transform:translateY(180px);transition:transform 2.2s cubic-bezier(.22,.8,.3,1)}
+#pct{font:800 44px -apple-system,"Segoe UI",sans-serif;fill:var(--ink);paint-order:stroke;stroke:#fff;stroke-width:6px}
+.bars{display:grid;gap:.6rem;margin:0 0 1rem;text-align:left}
+.bar{display:grid;grid-template-columns:100px 1fr 40px;align-items:center;gap:.6rem;font-size:.84rem;font-weight:600}
+.bar i{height:9px;overflow:hidden;border-radius:99px;background:var(--pink-pale)}
+.bar b{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,#f3a6c3,var(--pink));transition:width 1.1s cubic-bezier(.22,.8,.3,1)}
+.bar em{font-style:normal;text-align:right;color:var(--pink-dark)}
+.actions{display:grid;gap:.55rem;margin-top:.5rem}
+.table-wrap{overflow-x:auto;margin-bottom:1rem}
+table{width:100%;border-collapse:collapse;font-size:.93rem}
+th,td{padding:.7rem .8rem;border-bottom:1px solid var(--line);text-align:left}
+th{background:var(--pink-pale);color:var(--pink-dark)}
+.tips{padding-left:1.2rem;color:#594b54}
+.tips li{margin-bottom:.55rem}
+.related a{display:block;margin-top:.35rem;padding:.55rem .8rem;border-left:3px solid var(--pink);border-radius:.4rem;background:var(--pink-pale)}
+.related h2{margin-bottom:.4rem}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes heart-beat{0%,100%{transform:scale(1)}8%{transform:scale(1.09)}16%{transform:scale(1)}24%{transform:scale(1.05)}32%{transform:scale(1)}}
+@keyframes rise-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:780px){
+.hero{min-height:auto;grid-template-columns:1fr;gap:2.2rem;padding:4rem 0 3.5rem}
+.hero-copy{max-width:600px}.hero-copy h1{max-width:540px}
+.calculator-card{width:min(100%,560px);justify-self:center}
+.content-layout{grid-template-columns:1fr;gap:2rem;padding:4rem 0}
+.guide-aside{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){
+.header-inner,.footer-inner,.hero,.content-layout{width:min(100% - 2rem,1120px)}
+.header-inner{min-height:68px;align-items:flex-start;flex-direction:column;justify-content:center;gap:.25rem;padding:.65rem 0}
+.brand{font-size:1.1rem;line-height:1.2}
+.site-nav{width:100%;justify-content:flex-start;gap:.2rem 1rem}
+.site-nav a{font-size:.76rem}
+.hero{padding-top:3.25rem}
+h1{font-size:clamp(2.45rem,12vw,3.3rem)}
+.calculator-card{padding:1.35rem;border-radius:1.15rem}
+.share-section{flex-wrap:wrap;gap:.1rem .7rem}
+.share-section p{width:100%;text-align:center}
+.content-layout{padding-top:3.4rem;padding-bottom:4rem}
+.content-section{margin-bottom:2.75rem}
+.guide-aside{grid-template-columns:1fr}
+.bar{grid-template-columns:86px 1fr 38px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Ads */
+/* .ad-slot{min-height:280px;margin:0 0 3rem;text-align:center}
+.ad-slot[hidden]{display:none}
+.ad-slot small{display:block;margin-bottom:.4rem;color:var(--muted);font-size:.7rem}
+.guide-aside .ad-slot{min-height:250px;margin:0}
+.author-box{padding:1.3rem;border:1px solid var(--line);border-radius:1rem;background:var(--paper)}
+.author-box h2{font-size:1.2rem} */
+
+/* Motion and polish */
+.float-hearts{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.float-hearts i{position:absolute;bottom:-40px;left:var(--x);color:var(--pink);font-size:var(--s);font-style:normal;opacity:0;animation:drift var(--d) linear var(--delay) infinite}
+@keyframes drift{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.35}90%{opacity:.18}100%{transform:translateY(-640px) rotate(25deg);opacity:0}}
+.live-preview{min-height:1.7rem;margin:.9rem 0 .2rem;color:var(--pink-dark);font-weight:700;text-align:center}
+.live-preview b{display:inline-block;margin:0 .2rem;animation:heart-beat 1.6s ease-in-out infinite}
+#badge{display:inline-block;padding:.3rem .9rem;border-radius:999px;background:var(--pink-pale);letter-spacing:.08em}
+.calculator-card{transition:box-shadow .3s ease,transform .3s ease}
+.calculator-card:hover{transform:translateY(-3px);box-shadow:0 26px 65px rgba(217,68,123,.18)}
+.button-primary:active{transform:translateY(1px) scale(.99)}
+.js .content-section,.js .note-card{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.js .content-section.in-view,.js .note-card.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.float-hearts{display:none}.js .content-section,.js .note-card{opacity:1;transform:none}.calculator-card:hover{transform:none}}
+
+.field select{display:block;width:100%;min-height:49px;padding:.65rem .8rem;border:1px solid var(--line);border-radius:.65rem;background:#fffdfd;color:var(--ink);transition:border-color 160ms ease,box-shadow 160ms ease}
+.field select:focus{border-color:var(--pink);outline:0;box-shadow:0 0 0 4px rgba(233,76,131,.12)}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="/" aria-label="LoveCalcu home"><span aria-hidden="true">♡</span> LoveCalcu</a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="/">Love calculator</a><a href="#faq">FAQs</a><a href="about.html">About</a></nav>
+  </div></header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true">✦</span> Written in the stars</p>
+        <h1 id="page-title">Zodiac Love Calculator</h1>
+        <p class="hero-description">Pick two star signs and see how your elements match. A playful percentage, a short reading, and a result you can share.</p>
+        <a class="text-link" href="/">Prefer names? Try the name love calculator <span aria-hidden="true">→</span></a>
+      </div>
+
+      <section class="calculator-card" id="calculator" aria-labelledby="calculator-title">
+        <div class="card-heading"><span class="heart-mark" aria-hidden="true">✦</span>
+          <div><h2 id="calculator-title">Check your star sign match</h2><p>Choose both signs to see your score.</p></div></div>
+        <form id="zodiac-form">
+          <div class="field"><label for="sign1">Your sign</label><select id="sign1" required></select></div>
+          <div class="field"><label for="sign2">Their sign</label><select id="sign2" required></select></div>
+          <button class="button button-primary" type="submit">Calculate zodiac match <span aria-hidden="true">♥</span></button>
+          <p class="privacy-note">For entertainment only. Astrology is not a scientific measure of compatibility.</p>
+        </form>
+        <section id="results" class="result-state" aria-labelledby="result-title" aria-live="polite" hidden>
+          <p class="result-kicker" id="badge">Your star match</p>
+          <svg class="heart-meter" viewBox="0 0 200 180" role="img" aria-label="Love meter">
+            <defs><path id="hp" d="M100 170C40 125 10 92 10 55 10 30 30 12 54 12c18 0 35 10 46 28C111 22 128 12 146 12c24 0 44 18 44 43 0 37-30 70-90 115z"/><clipPath id="hc"><use href="#hp"/></clipPath></defs>
+            <use href="#hp" class="heart-bg"/><g clip-path="url(#hc)"><rect id="fill" class="heart-fill" width="200" height="180"/></g>
+            <text id="pct" x="100" y="108" text-anchor="middle">0%</text>
+          </svg>
+          <h2 id="result-title" tabindex="-1">Your result is ready!</h2>
+          <p id="love-results" class="result-copy"></p>
+          <div class="actions">
+            <a class="button button-primary" id="shareWa" target="_blank" rel="noopener">Share on WhatsApp</a>
+            <button class="button button-secondary" id="copyLink" type="button">Copy result link</button>
+            <button class="button button-secondary" id="try-again" type="button">Try other signs</button>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <div class="content-layout">
+      <article class="guide">
+        <p class="byline">By Dilawar Khan. Updated October 2026.</p>
+        <section class="content-section">
+          <h2>How the zodiac love calculator works</h2>
+          <p>Each of the 12 signs belongs to one of four elements: fire, earth, air, or water. Traditional astrology says some elements flow together and others clash. The calculator starts from that pairing, then adds a small variation for the exact two signs. The same two signs always give the same score, in any order.</p>
+        </section>
+
+        <section class="content-section">
+          <h2>The 12 zodiac signs and their elements</h2>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Element</th><th>Signs and dates</th></tr></thead>
+            <tbody>
+              <tr><td>Fire</td><td>Aries (Mar 21 to Apr 19), Leo (Jul 23 to Aug 22), Sagittarius (Nov 22 to Dec 21)</td></tr>
+              <tr><td>Earth</td><td>Taurus (Apr 20 to May 20), Virgo (Aug 23 to Sep 22), Capricorn (Dec 22 to Jan 19)</td></tr>
+              <tr><td>Air</td><td>Gemini (May 21 to Jun 20), Libra (Sep 23 to Oct 22), Aquarius (Jan 20 to Feb 18)</td></tr>
+              <tr><td>Water</td><td>Cancer (Jun 21 to Jul 22), Scorpio (Oct 23 to Nov 21), Pisces (Feb 19 to Mar 20)</td></tr>
+            </tbody></table></div>
+        </section>
+
+        <!-- <div class="ad-slot" aria-label="Advertisement"><small>Advertisement</small><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5580564546196829" data-ad-slot="1767137575" data-ad-format="auto" data-full-width-responsive="true"></ins></div> -->
+
+        <section class="content-section">
+          <h2>What each element pairing means</h2>
+          <div class="table-wrap"><table id="pairTable">
+            <thead><tr><th>Pairing</th><th>Reading</th></tr></thead>
+            <tbody>
+              <tr data-pair="FF"><td>Fire + Fire</td><td>Two fire signs share energy and a love of adventure. Take turns leading.</td></tr>
+              <tr data-pair="EE"><td>Earth + Earth</td><td>Two earth signs build steady, loyal bonds. Add small surprises to keep things fresh.</td></tr>
+              <tr data-pair="AA"><td>Air + Air</td><td>Two air signs love talking and ideas. Make time for feelings as well.</td></tr>
+              <tr data-pair="WW"><td>Water + Water</td><td>Two water signs connect deeply and intuitively. Talk early before moods build up.</td></tr>
+              <tr data-pair="AF"><td>Fire + Air</td><td>Air feeds fire. Ideas and passion keep each other excited.</td></tr>
+              <tr data-pair="EW"><td>Earth + Water</td><td>Earth steadies water and water softens earth. A nurturing mix.</td></tr>
+              <tr data-pair="EF"><td>Fire + Earth</td><td>Fire wants action and earth wants routine. Patience brings balance.</td></tr>
+              <tr data-pair="AW"><td>Air + Water</td><td>Air thinks and water feels. Listening closes the gap.</td></tr>
+              <tr data-pair="FW"><td>Fire + Water</td><td>This mix can steam or fizzle. Gentle words and humor help a lot.</td></tr>
+              <tr data-pair="AE"><td>Air + Earth</td><td>Air likes change and earth likes stability. Find a shared plan.</td></tr>
+            </tbody></table></div>
+          <p>Remember that your full birth chart has many more parts than your sun sign, and astrology is for fun. Use these readings as conversation starters, not rules.</p>
+        </section>
+
+        <section class="content-section faq-section" id="faq">
+          <h2>Zodiac love calculator FAQs</h2>
+          <details><summary>How does the zodiac love calculator work?</summary><p>It compares the elements of your two signs (fire, earth, air, water) and adds a small sign-based variation to give a playful percentage.</p></details>
+          <details><summary>Which zodiac signs are the best match?</summary><p>In traditional astrology, fire pairs well with air, and earth pairs well with water. Signs that share an element also get along well.</p></details>
+          <details><summary>Is zodiac compatibility scientific?</summary><p>No. Astrology is not supported by scientific evidence. Use this calculator for fun and conversation.</p></details>
+          <details><summary>Does a low score mean we should not date?</summary><p>No. Real relationships depend on trust, respect, and communication, not on star signs.</p></details>
+        </section>
+      </article>
+
+      <aside class="guide-aside" aria-label="More tools">
+        <div class="aside-card related"><h2>More love tools</h2>
+          <a href="/">Love calculator by name</a></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner">
+    <a class="brand footer-brand" href="/"><span aria-hidden="true">♡</span> LoveCalcu</a><p>A little fun, with love.</p>
+    <nav aria-label="Footer navigation"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="tos.html">Terms</a></nav>
+    <small>© <span id="current-year">2026</span> LoveCalcu. For entertainment only.</small>
+  </div></footer>
+  <script>
+    const $ = (id) => document.getElementById(id);
+const form = $("zodiac-form"), results = $("results");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Name, symbol, element (F fire, E earth, A air, W water)
+const SIGNS = [["Aries","♈","F"],["Taurus","♉","E"],["Gemini","♊","A"],["Cancer","♋","W"],["Leo","♌","F"],["Virgo","♍","E"],
+  ["Libra","♎","A"],["Scorpio","♏","W"],["Sagittarius","♐","F"],["Capricorn","♑","E"],["Aquarius","♒","A"],["Pisces","♓","W"]];
+const BASE = { FF: 85, EE: 82, AA: 84, WW: 86, AF: 88, EW: 88, EF: 55, AW: 55, FW: 45, AE: 50 };
+let shareUrl = "";
+
+[$("sign1"), $("sign2")].forEach((sel) => SIGNS.forEach(([name, symbol], i) => {
+  const o = document.createElement("option"); o.value = String(i); o.textContent = `${symbol} ${name}`; sel.append(o);
+}));
+
+// Same two signs always give the same score, in any order.
+function match(i, j) {
+  const lo = Math.min(i, j), hi = Math.max(i, j);
+  const key = [SIGNS[i][2], SIGNS[j][2]].sort().join("");
+  return { key, p: Math.max(35, Math.min(98, BASE[key] + ((lo * 7 + hi * 13 + lo * hi) % 9 - 4))) };
+}
+
+function badge(p) {
+  if (p >= 90) return "♥ Written in the stars";
+  if (p >= 75) return "♥ Great match";
+  if (p >= 55) return "♥ Sweet potential";
+  return "♥ Opposites attract";
+}
+
+function confetti() {
+  if (!window.confetti || reduceMotion) return;
+  const o = { spread: 360, ticks: 100, gravity: 0, decay: 0.94, startVelocity: 30, shapes: ["heart"], colors: ["#FFC0CB", "#FF69B4", "#FF1493", "#C71585"] };
+  window.confetti({ ...o, particleCount: 50, scalar: 2 });
+}
+
+function show(i, j) {
+  const { p, key } = match(i, j), a = SIGNS[i][0], b = SIGNS[j][0];
+  const reading = document.querySelector(`#pairTable [data-pair="${key}"] td:last-child`).textContent;
+  const strong = document.createElement("strong"); strong.textContent = `${p}%`;
+  $("love-results").replaceChildren(document.createTextNode(`${a} and ${b} have a `), strong, document.createTextNode(` playful compatibility score. ${reading}`));
+  $("badge").textContent = badge(p);
+  shareUrl = `https://lovecalcu.com/zodiac-love-calculator.html?a=${a}&b=${b}`;
+  $("shareWa").href = `https://wa.me/?text=${encodeURIComponent(`${a} and ${b} scored ${p}% on the zodiac love calculator. See it here: ${shareUrl}`)}`;
+  form.hidden = true; results.hidden = false;
+  $("result-title").focus({ preventScroll: true });
+  $("pct").textContent = "0%"; $("fill").style.transform = "translateY(180px)";
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    $("fill").style.transform = `translateY(${180 - p * 1.7}px)`;
+    const start = performance.now(), dur = reduceMotion ? 1 : 2200;
+    const tick = (t) => {
+      const k = Math.min((t - start) / dur, 1);
+      $("pct").textContent = `${Math.round(p * (1 - (1 - k) ** 3))}%`;
+      if (k < 1) requestAnimationFrame(tick); else confetti();
+    };
+    requestAnimationFrame(tick);
+  }));
+}
+
+form.addEventListener("submit", (e) => { e.preventDefault(); show(Number($("sign1").value), Number($("sign2").value)); });
+$("try-again").addEventListener("click", () => { results.hidden = true; form.hidden = false; $("copyLink").textContent = "Copy result link"; $("sign1").focus(); });
+$("copyLink").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(shareUrl); $("copyLink").textContent = "Link copied"; }
+  catch { window.prompt("Copy this link", shareUrl); }
+});
+
+// Shared links like ?a=Aries&b=Leo open on the result
+const q = new URLSearchParams(location.search);
+const find = (n) => SIGNS.findIndex((s) => s[0].toLowerCase() === (q.get(n) || "").toLowerCase());
+if (find("a") > -1 && find("b") > -1) { $("sign1").value = find("a"); $("sign2").value = find("b"); show(find("a"), find("b")); }
+
+// document.querySelectorAll("ins.adsbygoogle").forEach((ins) => {
+//   if (/^\d+$/.test(ins.dataset.adSlot || "")) { try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch { /* ad blocked */ } }
+//   else { ins.closest(".ad-slot")?.setAttribute("hidden", ""); }
+// });
+$("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
