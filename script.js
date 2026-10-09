@@ -5,11 +5,6 @@ const resultTitle = $("result-title"), shareStatus = $("share-status"), installB
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let lastResult = null, shareUrl = "";
 
-function focusNameInput() {
-  if (!form.hidden) name1Input.focus();
-}
-focusNameInput();
-
 // Same two names always give the same score, in any order (30 to 100).
 function score(a, b, salt = 0) {
   const pair = [a, b].map((n) => n.toLowerCase().replace(/[^\p{L}\p{N}]/gu, "")).sort().join("|");
