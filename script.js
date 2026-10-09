@@ -140,9 +140,8 @@ $("copyLink").addEventListener("click", async () => {
   $("copyLink").textContent = (await copyShareUrl(shareUrl)) ? "Link copied" : "Copy failed";
 });
 
-// Save the result as a square image
-$("saveImg").addEventListener("click", () => {
-  if (!lastResult) return;
+// Save or share the same generated result image
+function resultCanvas() {
   const { a, b, p } = lastResult;
   const c = document.createElement("canvas"); c.width = c.height = 1080;
   const x = c.getContext("2d");
@@ -156,7 +155,39 @@ $("saveImg").addEventListener("click", () => {
   x.font = "800 130px -apple-system, 'Segoe UI', sans-serif"; x.fillText(`${p}%`, 540, 500);
   x.fillStyle = "#fff"; x.font = "700 56px -apple-system, 'Segoe UI', sans-serif"; x.fillText(`${a} + ${b}`, 540, 950, 960);
   x.fillStyle = "#ffd6e6"; x.font = "500 36px -apple-system, 'Segoe UI', sans-serif"; x.fillText("lovecalcu.com", 540, 1020);
-  const link = document.createElement("a"); link.download = "love-result.png"; link.href = c.toDataURL("image/png"); link.click();
+  return c;
+}
+
+$("saveImg").addEventListener("click", () => {
+  if (!lastResult) return;
+  const link = document.createElement("a"); link.download = "love-result.png"; link.href = resultCanvas().toDataURL("image/png"); link.click();
+});
+
+$("shareWa").addEventListener("click", async (event) => {
+  if (!lastResult) return;
+  event.preventDefault();
+  const waUrl = event.currentTarget.href;
+  const { a, b, p } = lastResult;
+  const text = `${a} and ${b} scored ${p}% on the love calculator. See the full result: ${shareUrl}`;
+  const data = resultCanvas().toDataURL("image/png").split(",")[1];
+  const bytes = Uint8Array.from(atob(data), (character) => character.charCodeAt(0));
+  const image = new File([bytes], "love-result.png", { type: "image/png" });
+
+  if (image && navigator.canShare?.({ files: [image] }) && navigator.share) {
+    try {
+      await navigator.share({ files: [image], title: `${a} + ${b}: ${p}%`, text });
+      shareStatus.textContent = "Choose WhatsApp to send your result image and link.";
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        shareStatus.textContent = "Sharing was unavailable. WhatsApp will open with your result link.";
+        window.location.href = waUrl;
+      }
+    }
+    return;
+  }
+
+  shareStatus.textContent = "WhatsApp will open with your result link. Save the image separately to attach it.";
+  window.location.href = waUrl;
 });
 
 async function copyShareUrl(url) {
